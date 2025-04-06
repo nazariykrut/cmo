@@ -25,12 +25,14 @@ col1.addWidget(translatetext)
 
 window.setLayout(col1)
 
-text1 = QTextEdit()
-col2 = QVBoxLayout()
-col2.addWidget(text1)
+text = QLabel("Введіть текст")
 
-window.setLayout(col2)
+col1.addWidget(text)
+
+text1 = QTextEdit()
+col1.addWidget(text1)
+
+window.setLayout(col1)
 
 app.exec()
-
 
