@@ -1,5 +1,6 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QListWidget, QLabel, QPushButton, QLineEdit, QTextEdit, QHBoxLayout, QVBoxLayout, QInputDialog
+from PyQt5.QtWidgets import QApplication, QWidget, QListWidget, QLabel, QPushButton, QLineEdit, QTextEdit, QHBoxLayout, \
+    QVBoxLayout, QInputDialog, QMessageBox, QComboBox
 import sys
 
 
@@ -9,23 +10,27 @@ window.resize(900,600)
 window.show()
 
 
-window.setWindowTitle("perevodka")
+window.setWindowTitle("Переводчик")
 
 
-translatetext = QTextEdit()
+
+
+translatetext = QComboBox()
 
 col1 = QVBoxLayout()
 col1.addWidget(translatetext)
 
+
+
+
 window.setLayout(col1)
 
+text1 = QTextEdit()
+col2 = QVBoxLayout()
+col2.addWidget(text1)
 
+window.setLayout(col2)
 
-
-
-app.exec_()
-
-
-
+app.exec()
 
 
