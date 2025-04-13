@@ -8,29 +8,42 @@ app = QApplication([])
 window = QWidget()
 window.resize(900,600)
 window.show()
-
-
 window.setWindowTitle("Переводчик")
-
-
-
 
 translatetext = QComboBox()
 
-col1 = QVBoxLayout()
-col1.addWidget(translatetext)
+languages = {
+    "Англійська": "en", "Польска": "pl",
+"Японьска": "ja", "Французька": "fr",
+"Німецька": "de", "Іспаньська": "es",
+"Італийська": "it", "Португальска": "pt",
+"Китайська (спрощена)": "zh-cn", "Корейська": "ko",
+"Турецька": "tr", "Голандська": "nl", "Шведьска": "sv"
+}
 
+for lang_name in languages:
+    translatetext.addItem(lang_name,languages[lang_name])
 
-
-
-window.setLayout(col1)
 
 text = QLabel("Введіть текст")
-
-col1.addWidget(text)
-
 text1 = QTextEdit()
+trans = QComboBox()
+
+for lang_name in languages:
+    trans.addItem(lang_name,languages[lang_name])
+
+
+tex = QLabel("Наш переклад")
+tex1 = QTextEdit()
+
+col1 = QVBoxLayout()
+
+col1.addWidget(translatetext)
+col1.addWidget(text)
 col1.addWidget(text1)
+col1.addWidget(trans)
+col1.addWidget(tex)
+col1.addWidget(tex1)
 
 window.setLayout(col1)
 
